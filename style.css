@@ -1,0 +1,56 @@
+#translate_selected_text
+{
+	all: initial;
+	visibility: hidden;
+	display: block;
+	position: fixed;
+	border: 1px solid gray;
+	z-index: 2147483647;
+}
+
+#translate_selected_text > :first-child
+{
+	all: initial;
+	visibility: inherit;
+	display: block;
+	background-color: #31a27b;
+	height: 12px;
+	cursor: move;
+	border-bottom: 1px solid gray;
+}
+
+#translate_selected_text > :last-child
+{
+	all: initial;
+	visibility: inherit;
+	display: block;
+	background-color: white;
+	overflow: auto;
+	max-width: 1500px;
+	max-height: 400px;
+}
+
+#translate_selected_text > :last-child > div
+{
+	all: initial;
+	visibility: inherit;
+	display: block;
+	color: black;
+	padding: 10px;
+	text-align: justify;
+	white-space: pre-wrap;
+	font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+}
+
+#translate_selected_text_overlay
+{
+	all: initial;
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	top: 0;
+	cursor: move;
+	z-index: 2147483647;
+}
