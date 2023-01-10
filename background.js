@@ -17,9 +17,9 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 		console.log(text);
 	
 		var myHeaders = new Headers();
-		myHeaders.append("Content-Type", "application/json");
-	
-		var raw = `{'page': {'html':'${text}'}}`;
+		myHeaders.append("Content-Type", "text/plain");
+
+		var raw = `${text}`;
 	
 		var requestOptions = {
 		method: 'POST',
@@ -29,8 +29,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
 		};
 
 		
-		text = await fetch("https://rocky-spire-72250.herokuapp.com/https://html2haml.herokuapp.com/api.json", requestOptions).then(
-			r => r.ok ? r.json().then(obj => obj.page.haml) : "Error: " + r.statusText,
+		text = await fetch("https://cors-anywhere-yqzb.onrender.com/https://html2haml-api.onrender.com/html_content", requestOptions).then(
+			r => r.ok ? r.json().then(obj => obj.message1) : "Error: " + r.statusText,
 			e => "Error: " + e.message);
 
 		let message = [text, info.frameId > 0, info.editable, language];
